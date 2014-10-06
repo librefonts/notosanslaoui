@@ -1,0 +1,33 @@
+{
+  "name": "Noto Sans Lao UI",
+  "designer": "Danh Hong",
+  "license": "",
+  "visibility": "Sandbox",
+  "category": "monospace",
+  "size": 18929,
+  "fonts": [
+    {
+      "name": "Noto Sans Lao UI",
+      "style": "normal",
+      "weight": 700,
+      "filename": "NotoSansLaoUI-Bold.ttf",
+      "postScriptName": "NotoSansLaoUI-Bold",
+      "fullName": "Noto Sans Lao UI Bold",
+      "copyright": "Copyright 2012 Google Inc. All Rights Reserved."
+    },
+    {
+      "name": "Noto Sans Lao UI",
+      "style": "normal",
+      "weight": 400,
+      "filename": "NotoSansLaoUI-Regular.ttf",
+      "postScriptName": "NotoSansLaoUI",
+      "fullName": "Noto Sans Lao UI",
+      "copyright": "Copyright 2012 Google Inc. All Rights Reserved."
+    }
+  ],
+  "subsets": [
+    "latin",
+    "menu"
+  ],
+  "dateAdded": "2014-10-06"
+}

@@ -1,0 +1,527 @@
+# Bake Begins!
+### (1 of 6) Copy sources
+$ cp -a /home/travis/build/fontdirectory/notosanslaoui/DESCRIPTION.en_us.html /home/travis/build/fontdirectory/notosanslaoui/builds/build
+$ cp -a NotoSansLaoUI-Regular.ttf.ttx NotoSansLaoUI-Bold.ttf.ttx NotoSansLaoUI-Regular.ttf._p_o_s_t.ttx NotoSansLaoUI-Regular.ttf._n_a_m_e.ttx NotoSansLaoUI-Regular.ttf._m_o_r_x.ttx NotoSansLaoUI-Regular.ttf._m_a_x_p.ttx NotoSansLaoUI-Regular.ttf._l_o_c_a.ttx NotoSansLaoUI-Regular.ttf._h_m_t_x.ttx NotoSansLaoUI-Regular.ttf._h_h_e_a.ttx NotoSansLaoUI-Regular.ttf._h_e_a_d.ttx NotoSansLaoUI-Regular.ttf._g_l_y_f.ttx NotoSansLaoUI-Regular.ttf._g_a_s_p.ttx NotoSansLaoUI-Regular.ttf._f_e_a_t.ttx NotoSansLaoUI-Regular.ttf._c_m_a_p.ttx NotoSansLaoUI-Regular.ttf.O_S_2f_2.ttx NotoSansLaoUI-Regular.ttf.GlyphOrder.ttx NotoSansLaoUI-Regular.ttf.G_S_U_B_.ttx NotoSansLaoUI-Regular.ttf.G_P_O_S_.ttx NotoSansLaoUI-Regular.ttf.G_D_E_F_.ttx NotoSansLaoUI-Regular.ttf.F_F_T_M_.ttx NotoSansLaoUI-Bold.ttf._p_o_s_t.ttx NotoSansLaoUI-Bold.ttf._n_a_m_e.ttx NotoSansLaoUI-Bold.ttf._m_o_r_x.ttx NotoSansLaoUI-Bold.ttf._m_a_x_p.ttx NotoSansLaoUI-Bold.ttf._l_o_c_a.ttx NotoSansLaoUI-Bold.ttf._h_m_t_x.ttx NotoSansLaoUI-Bold.ttf._h_h_e_a.ttx NotoSansLaoUI-Bold.ttf._h_e_a_d.ttx NotoSansLaoUI-Bold.ttf._g_l_y_f.ttx NotoSansLaoUI-Bold.ttf._g_a_s_p.ttx NotoSansLaoUI-Bold.ttf._f_e_a_t.ttx NotoSansLaoUI-Bold.ttf._c_m_a_p.ttx NotoSansLaoUI-Bold.ttf.O_S_2f_2.ttx NotoSansLaoUI-Bold.ttf.GlyphOrder.ttx NotoSansLaoUI-Bold.ttf.G_S_U_B_.ttx NotoSansLaoUI-Bold.ttf.G_P_O_S_.ttx NotoSansLaoUI-Bold.ttf.G_D_E_F_.ttx NotoSansLaoUI-Bold.ttf.F_F_T_M_.ttx /home/travis/build/fontdirectory/notosanslaoui/builds/build/sources
+### (2 of 6) pyfontaine
+### (3 of 6) Run upstream tests
+$ fontbakery-check.py upstream-repo sources
+$ fontaine --collections subsets --text /home/travis/build/fontdirectory/notosanslaoui/builds/build/sources/NotoSansLaoUI-Bold.ttf.ttx /home/travis/build/fontdirectory/notosanslaoui/builds/build/sources/NotoSansLaoUI-Regular.ttf.ttx > fontaine.txt
+WARNING: Please install [PyICU](https://pypi.python.org/pypi/PyICU) toenable [feature], perhaps with: pip install pyicu
+bakery_lint.tests.upstream.test_prepolation.FontTestPrepolation.test_font_prepolation_glyph_contours(): OK
+end of pyfontaine process
+bakery_lint.tests.upstream.test_prepolation.FontTestPrepolation.test_font_prepolation_glyph_points(): OK
+bakery_lint.tests.upstream.test_prepolation.FontTestPrepolation.test_font_test_prepolation_glyph_names(): OK
+bakery_lint.tests.upstream.test_diacritic.TestDiacritic.test_diacritic_made_as_component(): OK
+bakery_lint.tests.upstream.test_diacritic.TestDiacritic.test_diacritic_made_as_mark_to_mark(): OK
+bakery_lint.tests.upstream.test_diacritic.TestDiacritic.test_diacritic_made_as_own_glyphs(): OK
+bakery_lint.tests.upstream.test_check_upstream_sources.ProjectUpstreamTestCase.test_bakery_yaml_exists(): OK
+bakery_lint.tests.upstream.test_check_upstream_sources.ProjectUpstreamTestCase.test_copyright_notices_same_across_family(): OK
+bakery_lint.tests.upstream.test_check_upstream_sources.ProjectUpstreamTestCase.test_description_html_exists(): OK
+bakery_lint.tests.upstream.test_check_upstream_sources.ProjectUpstreamTestCase.test_fontlog_txt_exists(): FAIL
+bakery_lint.tests.upstream.test_check_upstream_sources.ProjectUpstreamTestCase.test_metadata_json_exists(): FAIL
+$ fontbakery-check.py upstream-ttx NotoSansLaoUI-Bold.ttf.ttx
+bakery_lint.tests.upstream.test_glyphname_does_not_contain_disallowed_chars.TestGlyphNameDoesNotContainsDisallowedChars.test_glyphname_does_not_contain_disallowed_chars(): FAIL
+bakery_lint.tests.upstream.test_font_filename_eq_familystyle.TestTTFSourceFontFileNameEqualsFamilyStyle.test_source_ttf_font_filename_equals_familystyle(): FAIL
+$ mv /home/travis/build/fontdirectory/notosanslaoui/builds/build/sources/NotoSansLaoUI-Bold.ttf.ttx /home/travis/build/fontdirectory/notosanslaoui/builds/build/sources/NotoSansLaoUI-Bold.ttx
+bakery_lint.tests.upstream.test_font_filename_eq_familystyle.TestTTFSourceFontFileNameEqualsFamilyStyle.test_source_ttf_font_filename_equals_familystyle(): OK
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_epar_in_keys(): FAIL
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_os2_in_keys(): OK
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_ttx_doesnt_contain_duplicate_glyphs(): FAIL
+bakery_lint.tests.upstream.test_check_ttx_fontfamily_recommendations.TTX_FontFamilyNamingTest.test_ttx_family_naming_recommendation(): FAIL
+$ fontbakery-check.py upstream-ttx NotoSansLaoUI-Regular.ttf.ttx
+bakery_lint.tests.upstream.test_glyphname_does_not_contain_disallowed_chars.TestGlyphNameDoesNotContainsDisallowedChars.test_glyphname_does_not_contain_disallowed_chars(): FAIL
+bakery_lint.tests.upstream.test_font_filename_eq_familystyle.TestTTFSourceFontFileNameEqualsFamilyStyle.test_source_ttf_font_filename_equals_familystyle(): FAIL
+$ mv /home/travis/build/fontdirectory/notosanslaoui/builds/build/sources/NotoSansLaoUI-Regular.ttf.ttx /home/travis/build/fontdirectory/notosanslaoui/builds/build/sources/NotoSansLaoUI-Regular.ttx
+bakery_lint.tests.upstream.test_font_filename_eq_familystyle.TestTTFSourceFontFileNameEqualsFamilyStyle.test_source_ttf_font_filename_equals_familystyle(): OK
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_epar_in_keys(): FAIL
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_os2_in_keys(): OK
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_ttx_doesnt_contain_duplicate_glyphs(): FAIL
+bakery_lint.tests.upstream.test_check_ttx_fontfamily_recommendations.TTX_FontFamilyNamingTest.test_ttx_family_naming_recommendation(): FAIL
+### (4 of 6) Convert sources to TTF
+$ ttx -d /home/travis/build/fontdirectory/notosanslaoui/builds/build /home/travis/build/fontdirectory/notosanslaoui/builds/build/sources/NotoSansLaoUI-Regular.ttx /home/travis/build/fontdirectory/notosanslaoui/builds/build/sources/NotoSansLaoUI-Bold.ttx
+Compiling "/home/travis/build/fontdirectory/notosanslaoui/builds/build/sources/NotoSansLaoUI-Regular.ttx" to "/home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.ttf"...
+Parsing 'GlyphOrder' table...
+Parsing 'head' table...
+Parsing 'hhea' table...
+Parsing 'maxp' table...
+Parsing 'OS/2' table...
+Parsing 'hmtx' table...
+Parsing 'cmap' table...
+Parsing 'loca' table...
+Parsing 'glyf' table...
+Parsing 'name' table...
+Parsing 'post' table...
+Parsing 'gasp' table...
+Parsing 'FFTM' table...
+Parsing 'GDEF' table...
+Parsing 'GPOS' table...
+Parsing 'GSUB' table...
+Parsing 'feat' table...
+Parsing 'morx' table...
+Compiling "/home/travis/build/fontdirectory/notosanslaoui/builds/build/sources/NotoSansLaoUI-Bold.ttx" to "/home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.ttf"...
+Parsing 'GlyphOrder' table...
+Parsing 'head' table...
+Parsing 'hhea' table...
+Parsing 'maxp' table...
+Parsing 'OS/2' table...
+Parsing 'hmtx' table...
+Parsing 'cmap' table...
+Parsing 'loca' table...
+Parsing 'glyf' table...
+Parsing 'name' table...
+Parsing 'post' table...
+Parsing 'gasp' table...
+Parsing 'FFTM' table...
+Parsing 'GDEF' table...
+Parsing 'GPOS' table...
+Parsing 'GSUB' table...
+Parsing 'feat' table...
+Parsing 'morx' table...
+### Test NotoSansLaoUI-Regular.ttf
+$ fontbakery-check.py result NotoSansLaoUI-Regular.ttf
+bakery_lint.tests.downstream.test_names_are_ascii_only.CheckNamesAreASCIIOnly.test_check_names_are_ascii_only(): OK
+bakery_lint.tests.downstream.test_gpos_table_has_kerning_info.CheckGposTableHasKerningInfo.test_gpos_table_has_kerning_info(): FAIL
+bakery_lint.tests.downstream.test_gasp_table_value.CheckGaspTableType.test_check_gasp_table_type(): FAIL
+$ fontbakery-fix-gasp.py --set=15 /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.ttf
+$ mv /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.ttf.fix /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.ttf
+bakery_lint.tests.downstream.test_gasp_table_value.CheckGaspTableType.test_check_gasp_table_type(): OK
+$ fontbakery-fix-gasp.py --set=15 /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.ttf
+$ mv /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.ttf.fix /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.ttf
+This font contains both a 'mor[tx]' table and a 'GSUB' table.
+  FF will only read feature/settings in 'morx' which do not match features
+  found in 'GSUB'.
+The glyph named space is mapped to U+0021.
+But its name indicates it should be mapped to U+0020.
+The glyph named exclam is mapped to U+0022.
+But its name indicates it should be mapped to U+0021.
+The glyph named quotedbl is mapped to U+0023.
+But its name indicates it should be mapped to U+0022.
+The glyph named numbersign is mapped to U+0024.
+But its name indicates it should be mapped to U+0023.
+The glyph named dollar is mapped to U+0025.
+But its name indicates it should be mapped to U+0024.
+The glyph named percent is mapped to U+0026.
+But its name indicates it should be mapped to U+0025.
+The glyph named ampersand is mapped to U+0027.
+But its name indicates it should be mapped to U+0026.
+The glyph named quotesingle is mapped to U+0028.
+But its name indicates it should be mapped to U+0027.
+The glyph named parenleft is mapped to U+0029.
+But its name indicates it should be mapped to U+0028.
+The glyph named parenright is mapped to U+002A.
+But its name indicates it should be mapped to U+0029.
+The glyph named asterisk is mapped to U+002B.
+But its name indicates it should be mapped to U+002A.
+The glyph named plus is mapped to U+002C.
+But its name indicates it should be mapped to U+002B.
+The glyph named comma is mapped to U+002D.
+But its name indicates it should be mapped to U+002C.
+The glyph named hyphen is mapped to U+002E.
+But its name indicates it should be mapped to U+002D.
+The glyph named period is mapped to U+002F.
+But its name indicates it should be mapped to U+002E.
+The glyph named slash is mapped to U+0030.
+But its name indicates it should be mapped to U+002F.
+The glyph named zero is mapped to U+0031.
+But its name indicates it should be mapped to U+0030.
+The glyph named one is mapped to U+0032.
+But its name indicates it should be mapped to U+0031.
+The glyph named two is mapped to U+0033.
+But its name indicates it should be mapped to U+0032.
+The glyph named three is mapped to U+0034.
+But its name indicates it should be mapped to U+0033.
+The glyph named four is mapped to U+0035.
+But its name indicates it should be mapped to U+0034.
+The glyph named five is mapped to U+0036.
+But its name indicates it should be mapped to U+0035.
+The glyph named six is mapped to U+0037.
+But its name indicates it should be mapped to U+0036.
+The glyph named seven is mapped to U+0038.
+But its name indicates it should be mapped to U+0037.
+The glyph named eight is mapped to U+0039.
+But its name indicates it should be mapped to U+0038.
+The glyph named nine is mapped to U+003A.
+But its name indicates it should be mapped to U+0039.
+The glyph named colon is mapped to U+003B.
+But its name indicates it should be mapped to U+003A.
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_paths_in_composite_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_paths_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_points_in_composite_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_points_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_duplicate_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_duplicate_unicode_codepoints(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_flipped_reference_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_missing_anchors(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_missing_extrema_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_overlapped_hints(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_points_are_integer_aligned(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_points_are_not_too_far_apart(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_postscript_hasnt_limit_hints_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_postscript_hasnt_limit_points_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_referenced_glyphs_are_present(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_valid_glyph_names(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_valid_length_instructions(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_validation_glyph_intersect(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_validation_open_contours(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_wrong_direction_in_glyphs(): OK
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalLinegapMetrics.test_metrics_linegaps_are_zero(): FAIL
+$ fontbakery-fix-vertical-metrics.py --autofix /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.ttf /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.ttf
+$ mv /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.ttf.fix /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.ttf
+$ mv /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.ttf.fix /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.ttf
+$ fontbakery-fix-vertical-metrics.py /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.ttf /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.ttf
+Parameter              NotoSansLaoUI-Regular.ttf    NotoSansLaoUI-Bold.ttf    
+ymax                   2123                         1913                      
+hhea.ascent            2123                         2123                      
+OS/2.sTypoAscender     2123                         2123                      
+OS/2.usWinAscent       2123                         2123                      
+ymin                   -639                         -580                      
+hhea.descent           -639                         -639                      
+OS/2.sTypoDescender    -639                         -639                      
+OS/2.usWinDescent      639                          639                       
+hhea.lineGap           0                            0                         
+OS/2.sTypoLineGap      0                            0                         
+hhea total             2762                         2762                      
+typo total             2762                         2762                      
+win total              2762                         2762                      
+UPM:Heights            2048:2762                    2048:2493                 
+UPM:Heights %          134 %                        121 %                     
+
+
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalLinegapMetrics.test_metrics_linegaps_are_zero(): OK
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalAscentMetrics.test_metrics_ascents_equal_bbox(): OK
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalDescentMetrics.test_metrics_descents_equal_bbox(): OK
+bakery_lint.tests.downstream.test_check_upm_heights_less_120.TestCheckUPMHeightsLess120.test_check_upm_heigths_less_120(): FAIL
+bakery_lint.tests.downstream.test_check_unused_glyph_data.CheckUnusedGlyphData.test_check_unused_glyph_data(): ERROR
+bakery_lint.tests.downstream.test_check_unencoded_glyph.TestFontUnencodedGlyph.test_font_unencoded_glyphs(): FAIL
+$ fontbakery-fix-glyph-private-encoding.py --autofix /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.ttf
+$ mv /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.ttf.fix /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.ttf
+bakery_lint.tests.downstream.test_check_unencoded_glyph.TestFontUnencodedGlyph.test_font_unencoded_glyphs(): FAIL
+bakery_lint.tests.downstream.test_check_panose_identification.CheckPanoseIdentification.test_check_panose_identification(): OK
+bakery_lint.tests.downstream.test_check_os2_width_class.CheckOS2WidthClass.test_check_os2_width_class(): OK
+bakery_lint.tests.downstream.test_check_no_problematic_formats.CheckNoProblematicFormats.test_check_no_problematic_formats(): OK
+bakery_lint.tests.downstream.test_check_nbsp_width_matches_sp_width.CheckNbspWidthMatchesSpWidth.test_check_nbsp_width_matches_sp_width(): FAIL
+$ fontbakery-fix-nbsp.py /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.ttf
+$ mv /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.ttf.fix /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.ttf
+bakery_lint.tests.downstream.test_check_nbsp_width_matches_sp_width.CheckNbspWidthMatchesSpWidth.test_check_nbsp_width_matches_sp_width(): FAIL
+bakery_lint.tests.downstream.test_check_names_same_across_platforms.CheckNamesSameAcrossPlatforms.test_check_names_same_across_platforms(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckStyleNameRecommendation.test_check_stylename_is_under_recommendations(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFamilyNameRecommendation.test_check_opentype_familyname(): FAIL
+$ fontbakery-fix-opentype-names.py /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.ttf
+$ mv /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.ttf.fix /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.ttf
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFamilyNameRecommendation.test_check_opentype_familyname(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTStyleNameRecommendation.test_check_opentype_stylename(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFullNameRecommendation.test_check_opentype_fullname(): OK
+bakery_lint.tests.downstream.test_check_magic_prep_code.CheckMagicPREPByteCode.test_prep_magic_code(): FAIL
+bakery_lint.tests.downstream.test_check_license_included.CheckLicenseIncluded.test_license_included_in_font_names(): OK
+bakery_lint.tests.downstream.test_check_italic_angle_agreement.CheckItalicAngleAgreement.test_check_italic_angle_agreement(): OK
+bakery_lint.tests.downstream.test_check_hmtx_hhea_max_advance_width_agreement.CheckHmtxHheaMaxAdvanceWidthAgreement.test_check_hmtx_hhea_max_advance_width_agreement(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_euro(): FAIL
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_nbsp(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_space(): OK
+bakery_lint.tests.downstream.test_check_glyf_table_length.CheckGlyfTableLength.test_check_glyf_table_length(): FAIL
+bakery_lint.tests.downstream.test_check_full_font_name_begins_with_family_name.CheckFullFontNameBeginsWithFamilyName.test_check_full_font_name_begins_with_family_name(): OK
+bakery_lint.tests.downstream.test_check_fontname_matches_macstyle.CheckFontNameEqualToMacStyleFlags.test_fontname_is_equal_to_macstyle(): FAIL
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasDsigTable.test_check_font_has_dsig_table(): FAIL
+$ fontbakery-fix-dsig.py /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.ttf
+$ mv /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.ttf.fix /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.ttf
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasDsigTable.test_check_font_has_dsig_table(): OK
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasNotKernTable.test_no_kern_table_exists(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFsTypeIsNotSet.test_is_fstype_not_set(): FAIL
+$ fontbakery-fix-fstype.py --autofix /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.ttf
+$ mv /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.ttf.fix /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.ttf
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFsTypeIsNotSet.test_is_fstype_not_set(): OK
+$ fontbakery-fix-fstype.py --autofix /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.ttf
+$ mv /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.ttf.fix /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.ttf
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_em_is_1000(): FAIL
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_font_is_font(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_latin_file_exists(): FAIL
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_menu_file_exists(): FAIL
+### Optimize TTF NotoSansLaoUI-Regular.ttf
+$ ls -l 'NotoSansLaoUI-Regular.ttf'* # look at the size savings of that subset process
+NotoSansLaoUI-Regular.ttf.opt: 38808 bytes
+NotoSansLaoUI-Regular.ttf: 41320 bytes
+$ mv /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.ttf.opt /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.ttf
+### Autohint TTFs (ttfautohint) NotoSansLaoUI-Regular.ttf
+$ ttfautohint -l 7 -r 28 -G 50 -x 13 -w "G" /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.ttf '/home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.autohint.ttf'
+
+$ ls -l /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.*ttf # look at the size savings of that subset process
+/home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.ttf: 38808 bytes
+/home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.autohint.ttf: 38840 bytes
+$ mv /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.autohint.ttf /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.ttf
+### Subset TTFs (pyftsubset) NotoSansLaoUI-Regular.ttf
+$ pyftsubset NotoSansLaoUI-Regular.latin
+$ pyftsubset NotoSansLaoUI-Regular.menu
+strippedname:/home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Regular.ttf
+spaceWidth is    640
+nbspWidth is     640
+Nothing to do
+### Test NotoSansLaoUI-Bold.ttf
+$ fontbakery-check.py result NotoSansLaoUI-Bold.ttf
+bakery_lint.tests.downstream.test_names_are_ascii_only.CheckNamesAreASCIIOnly.test_check_names_are_ascii_only(): OK
+bakery_lint.tests.downstream.test_gpos_table_has_kerning_info.CheckGposTableHasKerningInfo.test_gpos_table_has_kerning_info(): FAIL
+bakery_lint.tests.downstream.test_gasp_table_value.CheckGaspTableType.test_check_gasp_table_type(): FAIL
+$ fontbakery-fix-gasp.py --set=15 /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.ttf
+$ mv /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.ttf.fix /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.ttf
+bakery_lint.tests.downstream.test_gasp_table_value.CheckGaspTableType.test_check_gasp_table_type(): OK
+$ fontbakery-fix-gasp.py --set=15 /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.ttf
+$ mv /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.ttf.fix /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.ttf
+This font contains both a 'mor[tx]' table and a 'GSUB' table.
+  FF will only read feature/settings in 'morx' which do not match features
+  found in 'GSUB'.
+The glyph named space is mapped to U+0021.
+But its name indicates it should be mapped to U+0020.
+The glyph named exclam is mapped to U+0022.
+But its name indicates it should be mapped to U+0021.
+The glyph named quotedbl is mapped to U+0023.
+But its name indicates it should be mapped to U+0022.
+The glyph named numbersign is mapped to U+0024.
+But its name indicates it should be mapped to U+0023.
+The glyph named dollar is mapped to U+0025.
+But its name indicates it should be mapped to U+0024.
+The glyph named percent is mapped to U+0026.
+But its name indicates it should be mapped to U+0025.
+The glyph named ampersand is mapped to U+0027.
+But its name indicates it should be mapped to U+0026.
+The glyph named quotesingle is mapped to U+0028.
+But its name indicates it should be mapped to U+0027.
+The glyph named parenleft is mapped to U+0029.
+But its name indicates it should be mapped to U+0028.
+The glyph named parenright is mapped to U+002A.
+But its name indicates it should be mapped to U+0029.
+The glyph named asterisk is mapped to U+002B.
+But its name indicates it should be mapped to U+002A.
+The glyph named plus is mapped to U+002C.
+But its name indicates it should be mapped to U+002B.
+The glyph named comma is mapped to U+002D.
+But its name indicates it should be mapped to U+002C.
+The glyph named hyphen is mapped to U+002E.
+But its name indicates it should be mapped to U+002D.
+The glyph named period is mapped to U+002F.
+But its name indicates it should be mapped to U+002E.
+The glyph named slash is mapped to U+0030.
+But its name indicates it should be mapped to U+002F.
+The glyph named zero is mapped to U+0031.
+But its name indicates it should be mapped to U+0030.
+The glyph named one is mapped to U+0032.
+But its name indicates it should be mapped to U+0031.
+The glyph named two is mapped to U+0033.
+But its name indicates it should be mapped to U+0032.
+The glyph named three is mapped to U+0034.
+But its name indicates it should be mapped to U+0033.
+The glyph named four is mapped to U+0035.
+But its name indicates it should be mapped to U+0034.
+The glyph named five is mapped to U+0036.
+But its name indicates it should be mapped to U+0035.
+The glyph named six is mapped to U+0037.
+But its name indicates it should be mapped to U+0036.
+The glyph named seven is mapped to U+0038.
+But its name indicates it should be mapped to U+0037.
+The glyph named eight is mapped to U+0039.
+But its name indicates it should be mapped to U+0038.
+The glyph named nine is mapped to U+003A.
+But its name indicates it should be mapped to U+0039.
+The glyph named colon is mapped to U+003B.
+But its name indicates it should be mapped to U+003A.
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_paths_in_composite_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_paths_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_points_in_composite_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_points_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_duplicate_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_duplicate_unicode_codepoints(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_flipped_reference_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_missing_anchors(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_missing_extrema_in_glyphs(): FAIL
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_overlapped_hints(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_points_are_integer_aligned(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_points_are_not_too_far_apart(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_postscript_hasnt_limit_hints_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_postscript_hasnt_limit_points_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_referenced_glyphs_are_present(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_valid_glyph_names(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_valid_length_instructions(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_validation_glyph_intersect(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_validation_open_contours(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_wrong_direction_in_glyphs(): OK
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalLinegapMetrics.test_metrics_linegaps_are_zero(): OK
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalAscentMetrics.test_metrics_ascents_equal_bbox(): OK
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalDescentMetrics.test_metrics_descents_equal_bbox(): OK
+bakery_lint.tests.downstream.test_check_upm_heights_less_120.TestCheckUPMHeightsLess120.test_check_upm_heigths_less_120(): FAIL
+bakery_lint.tests.downstream.test_check_unused_glyph_data.CheckUnusedGlyphData.test_check_unused_glyph_data(): ERROR
+bakery_lint.tests.downstream.test_check_unencoded_glyph.TestFontUnencodedGlyph.test_font_unencoded_glyphs(): ERROR
+bakery_lint.tests.downstream.test_check_panose_identification.CheckPanoseIdentification.test_check_panose_identification(): OK
+bakery_lint.tests.downstream.test_check_os2_width_class.CheckOS2WidthClass.test_check_os2_width_class(): OK
+bakery_lint.tests.downstream.test_check_no_problematic_formats.CheckNoProblematicFormats.test_check_no_problematic_formats(): OK
+bakery_lint.tests.downstream.test_check_nbsp_width_matches_sp_width.CheckNbspWidthMatchesSpWidth.test_check_nbsp_width_matches_sp_width(): FAIL
+$ fontbakery-fix-nbsp.py /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.ttf
+$ mv /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.ttf.fix /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.ttf
+bakery_lint.tests.downstream.test_check_nbsp_width_matches_sp_width.CheckNbspWidthMatchesSpWidth.test_check_nbsp_width_matches_sp_width(): FAIL
+bakery_lint.tests.downstream.test_check_names_same_across_platforms.CheckNamesSameAcrossPlatforms.test_check_names_same_across_platforms(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckStyleNameRecommendation.test_check_stylename_is_under_recommendations(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFamilyNameRecommendation.test_check_opentype_familyname(): FAIL
+$ fontbakery-fix-opentype-names.py /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.ttf
+$ mv /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.ttf.fix /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.ttf
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFamilyNameRecommendation.test_check_opentype_familyname(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTStyleNameRecommendation.test_check_opentype_stylename(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFullNameRecommendation.test_check_opentype_fullname(): OK
+bakery_lint.tests.downstream.test_check_magic_prep_code.CheckMagicPREPByteCode.test_prep_magic_code(): FAIL
+bakery_lint.tests.downstream.test_check_license_included.CheckLicenseIncluded.test_license_included_in_font_names(): OK
+bakery_lint.tests.downstream.test_check_italic_angle_agreement.CheckItalicAngleAgreement.test_check_italic_angle_agreement(): OK
+bakery_lint.tests.downstream.test_check_hmtx_hhea_max_advance_width_agreement.CheckHmtxHheaMaxAdvanceWidthAgreement.test_check_hmtx_hhea_max_advance_width_agreement(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_euro(): FAIL
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_nbsp(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_space(): OK
+bakery_lint.tests.downstream.test_check_glyf_table_length.CheckGlyfTableLength.test_check_glyf_table_length(): FAIL
+bakery_lint.tests.downstream.test_check_full_font_name_begins_with_family_name.CheckFullFontNameBeginsWithFamilyName.test_check_full_font_name_begins_with_family_name(): OK
+bakery_lint.tests.downstream.test_check_fontname_matches_macstyle.CheckFontNameEqualToMacStyleFlags.test_fontname_is_equal_to_macstyle(): FAIL
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasDsigTable.test_check_font_has_dsig_table(): FAIL
+$ fontbakery-fix-dsig.py /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.ttf
+$ mv /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.ttf.fix /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.ttf
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasDsigTable.test_check_font_has_dsig_table(): OK
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasNotKernTable.test_no_kern_table_exists(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFsTypeIsNotSet.test_is_fstype_not_set(): FAIL
+$ fontbakery-fix-fstype.py --autofix /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.ttf
+$ mv /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.ttf.fix /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.ttf
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFsTypeIsNotSet.test_is_fstype_not_set(): OK
+$ fontbakery-fix-fstype.py --autofix /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.ttf
+$ mv /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.ttf.fix /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.ttf
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_em_is_1000(): FAIL
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_font_is_font(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_latin_file_exists(): FAIL
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_menu_file_exists(): FAIL
+### Optimize TTF NotoSansLaoUI-Bold.ttf
+$ ls -l 'NotoSansLaoUI-Bold.ttf'* # look at the size savings of that subset process
+NotoSansLaoUI-Bold.ttf.opt: 36760 bytes
+NotoSansLaoUI-Bold.ttf: 39008 bytes
+$ mv /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.ttf.opt /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.ttf
+### Autohint TTFs (ttfautohint) NotoSansLaoUI-Bold.ttf
+$ ttfautohint -l 7 -r 28 -G 50 -x 13 -w "G" /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.ttf '/home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.autohint.ttf'
+
+$ ls -l /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.*ttf # look at the size savings of that subset process
+/home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.ttf: 36760 bytes
+/home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.autohint.ttf: 47484 bytes
+$ mv /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.autohint.ttf /home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.ttf
+### Subset TTFs (pyftsubset) NotoSansLaoUI-Bold.ttf
+$ pyftsubset NotoSansLaoUI-Bold.latin
+$ pyftsubset NotoSansLaoUI-Bold.menu
+strippedname:/home/travis/build/fontdirectory/notosanslaoui/builds/build/NotoSansLaoUI-Bold.ttf
+spaceWidth is    640
+nbspWidth is     640
+Nothing to do
+### (5 of 6) Generate METADATA.json (fontbakery-build-metadata.py)
+$ fontbakery-build-metadata.py /home/travis/build/fontdirectory/notosanslaoui/builds/build
+{} exists
+Designer's name from font is: Danh Hong
+Original size: 38840\nGzip size: 18929
+Family Name: Noto Sans Lao UI
+PS Name: NotoSansLaoUI-Bold
+Full Name: Noto Sans Lao UI Bold
+Style: normal
+Weight: 700
+Filename: NotoSansLaoUI-Bold.ttf
+Copyright: Copyright 2012 Google Inc. All Rights Reserved.
+Family Name: Noto Sans Lao UI
+PS Name: NotoSansLaoUI
+Full Name: Noto Sans Lao UI
+Style: normal
+Weight: 400
+Filename: NotoSansLaoUI-Regular.ttf
+Copyright: Copyright 2012 Google Inc. All Rights Reserved.
+### (6 of 6) Run tests for METADATA.json
+$ fontbakery-check.py metadata METADATA.json
+bakery_lint.tests.metadata_test.MetadataSubsetsListTest.test_charset_latin(): OK
+bakery_lint.tests.metadata_test.MetadataSubsetsListTest.test_charset_menu(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_description_is_more_than_500b(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_description_is_valid_html(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_daltonmaag_catalogue(): FAIL
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_fontbureau_catalogue(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_fontscom_catalogue(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_fontshop_catalogue(): FAIL
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_fontsmith_catalogue(): FAIL
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_houseind_catalogue(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_myfonts_catalogue(): FAIL
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_veer_catalogue(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_family_is_listed_in_gwf(): FAIL
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_atleast_latin_menu_subsets_exist(): OK
+/home/travis/virtualenv/python2.7.8/lib/python2.7/site-packages/bakery_lint/tests/metadata_test.py:141: UnicodeWarning: Unicode equal comparison failed to convert both arguments to Unicode - interpreting them as being unequal
+  self.assertTrue(designer in designers,
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_designer_exists_in_profiles_csv(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_fonts_items_dicts(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_fonts_key_list(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_fonts_no_dupes(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_has_unique_style_weight_pairs(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_keys(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_license(): FAIL
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_no_unknown_top_keys(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_subsets_key_list(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_top_keys_types(): OK
+bakery_lint.tests.downstream.test_metadata_font_copyright.CheckMetadataContainsReservedFontName.test_copyright_contains_correct_rfn(): FAIL
+bakery_lint.tests.downstream.test_metadata_font_copyright.CheckMetadataContainsReservedFontName.test_copyright_is_consistent_across_family(): OK
+bakery_lint.tests.downstream.test_metadata_font_copyright.CheckMetadataContainsReservedFontName.test_copyright_matches_pattern(): FAIL
+bakery_lint.tests.downstream.test_metadata_font_copyright.CheckMetadataContainsReservedFontName.test_metadata_copyright_size(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.TestFontOnDiskFamilyEqualToMetadataJSON.test_font_on_disk_family_equal_in_metadata_json(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.TestPostScriptNameInMetadataEqualFontOnDisk.test_postscriptname_in_metadata_equal_to_font_on_disk(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_font_name_matches_family(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_family_values_are_all_the_same(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_filename_matches_postscriptname(): FAIL
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_font_have_regular(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_fonts_fields_have_fontname(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_fullname_is_equal_to_internal_font_fullname(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_fullname_matches_postScriptName(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_regular_is_400(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_regular_is_normal(): FAIL
+bakery_lint.tests.downstream.test_check_text_files_exist.CheckTextFilesExist.test_copyrighttxt_exists(): FAIL
+bakery_lint.tests.downstream.test_check_text_files_exist.CheckTextFilesExist.test_description_exists(): OK
+bakery_lint.tests.downstream.test_check_text_files_exist.CheckTextFilesExist.test_fontlogtxt_exists(): FAIL
+bakery_lint.tests.downstream.test_check_text_files_exist.CheckTextFilesExist.test_licensetxt_exists(): FAIL
+bakery_lint.tests.downstream.test_check_subsets_exists.CheckSubsetsExist.test_check_subsets_exists(): OK
+bakery_lint.tests.downstream.test_check_monospace_agreements.CheckMonospaceAgreement.test_check_monospace_agreement(): OK
+bakery_lint.tests.downstream.test_check_metadata_style_matches_names.CheckItalicStyleMatchesMacStyle.test_check_italic_style_matches_names(): OK
+bakery_lint.tests.downstream.test_check_metadata_style_matches_names.CheckNormalStyleMatchesMacStyle.test_check_normal_style_matches_names(): OK
+bakery_lint.tests.downstream.test_check_metadata_matches_nametable.CheckMetadataMatchesNameTable.test_check_metadata_matches_nametable(): OK
+bakery_lint.tests.downstream.test_check_metadata_fields.CheckMetadataFields.test_check_metadata_fields(): OK
+bakery_lint.tests.downstream.test_check_menu_contains_proper_glyphs.CheckMenuSubsetContainsProperGlyphs.test_check_menu_contains_proper_glyphs(): FAIL
+bakery_lint.tests.downstream.test_check_glyph_consistency.CheckGlyphConsistencyInFamily.test_the_same_encodings_of_glyphs_across_family(): FAIL
+bakery_lint.tests.downstream.test_check_glyph_consistency.CheckGlyphConsistencyInFamily.test_the_same_names_of_glyphs_across_family(): OK
+bakery_lint.tests.downstream.test_check_glyph_consistency.CheckGlyphConsistencyInFamily.test_the_same_number_of_glyphs_across_family(): OK
+bakery_lint.tests.downstream.test_check_font_name_not_in_camelcase.CheckFontNameNotInCamelCase.test_fontname_not_in_camel_case(): OK
+bakery_lint.tests.downstream.test_check_files_menu_agreements.CheckFontsMenuAgreements.test_menu_file_agreement(): OK
+bakery_lint.tests.downstream.test_check_familyname_matches_fontnames.CheckFamilyNameMatchesFontNames.test_check_familyname_matches_fontnames(): OK
+bakery_lint.tests.downstream.test_check_canonical_weights.CheckCanonicalWeights.test_check_canonical_weights(): OK
+bakery_lint.tests.downstream.test_check_canonical_weights.CheckPostScriptNameMatchesWeight.test_postscriptname_contains_correct_weight(): FAIL
+bakery_lint.tests.downstream.test_check_canonical_weights.CheckFontWeightSameAsInMetadata.test_font_weight_same_as_in_metadata(): OK
+bakery_lint.tests.downstream.test_check_canonical_weights.CheckFullNameEqualCanonicalName.test_metadata_contains_current_font(): OK
+bakery_lint.tests.downstream.test_check_canonical_styles.CheckCanonicalStyles.test_check_canonical_styles(): OK
+bakery_lint.tests.downstream.test_check_canonical_filenames.CheckCanonicalFilenames.test_check_canonical_filenames(): OK
+{
+  "name": "Noto Sans Lao UI", 
+  "designer": "Danh Hong", 
+  "license": "", 
+  "visibility": "Sandbox", 
+  "category": "monospace", 
+  "size": 18929, 
+  "dateAdded": "2014-10-06", 
+  "fonts": [
+    {
+      "name": "Noto Sans Lao UI", 
+      "postScriptName": "NotoSansLaoUI-Bold", 
+      "fullName": "Noto Sans Lao UI Bold", 
+      "style": "normal", 
+      "weight": 700, 
+      "filename": "NotoSansLaoUI-Bold.ttf", 
+      "copyright": "Copyright 2012 Google Inc. All Rights Reserved."
+    }, 
+    {
+      "name": "Noto Sans Lao UI", 
+      "postScriptName": "NotoSansLaoUI", 
+      "fullName": "Noto Sans Lao UI", 
+      "style": "normal", 
+      "weight": 400, 
+      "filename": "NotoSansLaoUI-Regular.ttf", 
+      "copyright": "Copyright 2012 Google Inc. All Rights Reserved."
+    }
+  ], 
+  "subsets": [
+    "latin", 
+    "menu"
+  ]
+}
